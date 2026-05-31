@@ -4,6 +4,7 @@ import { ContactCard } from "../components/ContactCard";
 import useAppContext from "../hooks/useGlobalReducer"; 
 
 export const Home = () => {
+  
     const { store: { store, actions } } = useAppContext(); 
 
     useEffect(() => {
@@ -11,6 +12,8 @@ export const Home = () => {
             actions.loadContacts();
         }
     }, []);
+
+    console.log("🎨 Dibujando Home. Contactos en store:", store?.contacts);
 
     return (
         <div className="container mt-5" style={{ maxWidth: "800px" }}>
